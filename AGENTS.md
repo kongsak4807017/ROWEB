@@ -17,7 +17,10 @@ Before changing code or documentation, read:
 3. `docs/ROADMAP.md`
 4. `docs/IMPLEMENTATION_PLAYBOOK.md`
 5. `docs/SECURITY_AND_IP_BOUNDARY.md`
-6. Any deeper `AGENTS.md` in the directory being modified
+6. `.agents/skills/roweb-skill-router/SKILL.md`, then every domain skill selected by the router
+7. Any deeper `AGENTS.md` in the directory being modified
+
+The canonical skill catalog is `.agents/skills/README.md`; machine-readable discovery is available in `.agents/skills/registry.json`.
 
 ## 3. Source of truth
 
