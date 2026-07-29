@@ -2,8 +2,11 @@
 
 Date: 2026-07-29  
 Intended successor: Kimi K3 or another autonomous coding agent  
-Current canonical WP4A branch: `codex/wp4a-authoritative-compatibility`  
-Current canonical WP4A commit: `e161075640e4af6edfaaf1f04d929f57d5795544`
+Current canonical WP4A branch: `codex/wp4a-authoritative-compatibility`
+
+Rebased onto `origin/main`: `9b24a477d982eaf3d53b250762d6281465b20664`
+
+Compatibility commit after rebase: `e71e4b6`
 
 ## Read this first
 
@@ -41,7 +44,11 @@ Before editing:
 ### Canonical ROWEB main
 
 - Branch: `main`
-- Commit: `d8a044e80627518423d2c51c431f38efda055927`
+- Remote `origin/main`: `9b24a477d982eaf3d53b250762d6281465b20664`
+  (`Merge pull request #1 from kongsak4807017/feat/wp0-baseline-intake`).
+- The dirty local `main` worktree remains at
+  `d8a044e80627518423d2c51c431f38efda055927`; it was fetched but not pulled,
+  rebased, reset, or otherwise modified during WP4A reconciliation.
 - Dirty Foundation WIP exists.
 - Modified: `README.md`, `docs/ARCHITECTURE.md`,
   `docs/IMPLEMENTATION_PLAYBOOK.md`.
@@ -52,7 +59,10 @@ Before editing:
 ### WP4A compatibility lane
 
 - Branch: `codex/wp4a-authoritative-compatibility`
-- Commit: `e161075640e4af6edfaaf1f04d929f57d5795544`
+- Base: `origin/main` at `9b24a477d982eaf3d53b250762d6281465b20664`
+- Compatibility implementation commit after rebase: `e71e4b6`
+- Resolve the current branch tip with `git rev-parse HEAD`; the handoff update
+  itself is intentionally not self-referential.
 - Worktree clean at handoff.
 - This is the approved source for the active compatibility profile and risk
   register.
