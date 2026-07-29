@@ -20,56 +20,36 @@ This directory is the canonical, vendor-neutral skill source for AI agents worki
 - Do not claim 5,000 CCU without evidence from realistic sustained load tests.
 - Every implementation must define acceptance evidence and rollback behavior.
 
-## Skill catalog
+## Implemented skill catalog
 
 ### Routing and skill engineering
 
-- `roweb-skill-router`
-- `roweb-skill-author`
-- `roweb-repository-orientation`
-- `roweb-verification-gate`
+- `roweb-skill-router` — mandatory task routing and stop conditions
+- `roweb-skill-author` — lets agents create and improve further ROWEB skills
+- `roweb-repository-orientation` — repository, branch, contract, and dependency discovery
+- `roweb-verification-gate` — evidence gate before completion claims
 
-### Architecture and server
+### Architecture and runtime
 
-- `roweb-system-architecture`
-- `rathena-server-engineering`
-- `rathena-npc-script-engineering`
-- `rathena-skill-system-engineering`
-- `rathena-packet-protocol`
-- `rathena-database-migrations`
+- `roweb-system-architecture` — component boundaries, authority, data flow, ADRs
+- `rathena-server-engineering` — server source/config/scripts/content/database behavior
+- `rathena-packet-protocol` — PACKETVER, handshake, framing, fixtures, compatibility
+- `robrowser-client-engineering` — browser runtime, rendering, input, entities, UI integration
+- `roweb-wss-gateway` — WSS/TCP bridge, session handoff, backpressure, reconnect
 
-### Browser client and gateway
+### Assets and gameplay
 
-- `robrowser-client-engineering`
-- `roweb-wss-gateway`
-- `roweb-ui-ux`
-- `browser-performance-and-cache`
-
-### Asset pipeline
-
-- `ragnarok-grf-asset-pipeline`
-- `ragnarok-map-pipeline`
-- `ragnarok-sprite-act-pipeline`
-- `ragnarok-model-effect-audio-pipeline`
-- `asset-license-boundary`
-
-### Game systems
-
-- `mmorpg-game-design`
-- `mmorpg-combat-and-progression`
-- `mmorpg-economy-balancing`
-- `mmorpg-content-pipeline`
-- `mmorpg-social-systems`
+- `ragnarok-asset-pipeline` — GRF/path/CP949/map/sprite/model/effect/audio publishing
+- `mmorpg-game-systems` — game loop, combat, progression, economy, content, social systems
 
 ### Quality, security, and operations
 
-- `protocol-conformance-testing`
-- `gameplay-e2e-testing`
-- `mmorpg-load-testing`
-- `mmorpg-security`
-- `roweb-observability`
-- `roweb-production-deployment`
-- `roweb-liveops-and-incident-response`
+- `roweb-testing` — unit, contract, integration, browser E2E, visual and accessibility testing
+- `mmorpg-load-testing` — realistic CCU, hotspot, soak, fault and capacity evidence
+- `mmorpg-security` — authentication, abuse, duplication, injection and threat modeling
+- `roweb-operations` — observability, deployment, backup, rollback, liveops and incidents
+
+Broad skills intentionally contain domain checklists and may be split by `roweb-skill-author` when a workflow becomes independently complex. This avoids dozens of overlapping low-quality prompts while keeping every major MMORPG engineering area covered.
 
 ## Portability
 
@@ -88,4 +68,4 @@ A skill is not only prose. It must define:
 - failure and rollback behavior
 - handoff format
 
-See `SKILL_AUTHORING_STANDARD.md` and `templates/SKILL.template.md`.
+See `SKILL_AUTHORING_STANDARD.md`, `registry.json`, and `templates/SKILL.template.md`.
