@@ -1,0 +1,44 @@
+# Local dependencies and build output
+vendor/
+node_modules/
+dist/
+build/
+coverage/
+
+# Runtime state
+runtime/
+logs/
+pids/
+*.log
+*.pid
+.env
+.env.*
+!.env.example
+
+# Licensed Ragnarok assets — never commit
+assets/
+*.grf
+*.rgz
+*.rsw
+*.gnd
+*.gat
+*.rsm
+*.rsm2
+*.spr
+*.act
+*.pal
+*.str
+*.bmp
+*.tga
+*.wav
+
+# Local reports and screenshots that may contain licensed material
+reports/local/
+evidence/local/
+screenshots/local/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
