@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "canonicalRoot": ".agents/skills",
+  "mandatoryRouter": "roweb-skill-router",
+  "authoringStandard": "SKILL_AUTHORING_STANDARD.md",
+  "template": "templates/SKILL.template.md",
+  "skills": [
+    {"name":"roweb-skill-router","category":"routing","path":"roweb-skill-router/SKILL.md"},
+    {"name":"roweb-skill-author","category":"routing","path":"roweb-skill-author/SKILL.md"},
+    {"name":"roweb-repository-orientation","category":"routing","path":"roweb-repository-orientation/SKILL.md"},
+    {"name":"roweb-verification-gate","category":"quality","path":"roweb-verification-gate/SKILL.md"},
+    {"name":"roweb-system-architecture","category":"architecture","path":"roweb-system-architecture/SKILL.md"},
+    {"name":"rathena-server-engineering","category":"server","path":"rathena-server-engineering/SKILL.md"},
+    {"name":"rathena-packet-protocol","category":"protocol","path":"rathena-packet-protocol/SKILL.md"},
+    {"name":"robrowser-client-engineering","category":"client","path":"robrowser-client-engineering/SKILL.md"},
+    {"name":"roweb-wss-gateway","category":"networking","path":"roweb-wss-gateway/SKILL.md"},
+    {"name":"ragnarok-asset-pipeline","category":"assets","path":"ragnarok-asset-pipeline/SKILL.md"},
+    {"name":"mmorpg-game-systems","category":"game-design","path":"mmorpg-game-systems/SKILL.md"},
+    {"name":"roweb-testing","category":"quality","path":"roweb-testing/SKILL.md"},
+    {"name":"mmorpg-load-testing","category":"performance","path":"mmorpg-load-testing/SKILL.md"},
+    {"name":"mmorpg-security","category":"security","path":"mmorpg-security/SKILL.md"},
+    {"name":"roweb-operations","category":"operations","path":"roweb-operations/SKILL.md"}
+  ],
+  "invariants": [
+    "rAthena is authoritative for gameplay and persistence",
+    "roBrowserLegacy is the primary browser runtime",
+    "licensed Ragnarok asset bytes never enter Git",
+    "PACKETVER and protocol behavior are verified rather than guessed",
+    "asset traffic does not traverse rAthena or wsProxy",
+    "capacity claims require measured evidence"
+  ]
+}
