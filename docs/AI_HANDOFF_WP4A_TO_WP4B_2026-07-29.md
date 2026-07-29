@@ -1,7 +1,8 @@
 # ROWEB AI Handoff - WP4A Closed, WP4B Next
 
-Date: 2026-07-29  
-Intended successor: Kimi K3 or another autonomous coding agent  
+Date: 2026-07-29
+
+Intended successor: Kimi K3 or another autonomous coding agent
 Current canonical WP4A branch: `codex/wp4a-authoritative-compatibility`
 
 Rebased onto `origin/main`: `9b24a477d982eaf3d53b250762d6281465b20664`
