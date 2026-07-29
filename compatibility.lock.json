@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-29",
+  "product": "ROWEB",
+  "client": {
+    "name": "roBrowserLegacy",
+    "repository": "https://github.com/kongsak4807017/roBrowserLegacy.git",
+    "branch": "master",
+    "commit": "e84bfdcdadb791ba18fb501943e8e992ba8f646a",
+    "role": "primary-browser-runtime",
+    "licenseReviewStatus": "required-before-public-release"
+  },
+  "server": {
+    "name": "rAthena",
+    "repository": "https://github.com/kongsak4807017/rathena.git",
+    "branch": "master",
+    "commit": "0c3ca757ad35fff003130a8441a10f27cccd0ed9",
+    "role": "authoritative-game-server",
+    "profile": "pre-renewal",
+    "packetver": {
+      "status": "pending-runtime-verification",
+      "value": null,
+      "rule": "Do not guess. Resolve from the pinned rAthena build and the approved roBrowser client configuration before WP0 acceptance."
+    }
+  },
+  "workspace": {
+    "repositoryRoot": "C:\\Ragnarok-Prontera\\HermesWorkSpace\\ROWEB",
+    "sourceRoot": "C:\\Ragnarok-Prontera\\HermesWorkSpace\\ROWEB\\vendor",
+    "assetRoot": "C:\\Ragnarok-Prontera\\assets\\data",
+    "runtimeRoot": "C:\\Ragnarok-Prontera\\runtime"
+  },
+  "assetPolicy": {
+    "commitAssetBytes": false,
+    "productionMode": "pre-extracted-static-assets",
+    "developerFallback": "local-data-or-grf-drop"
+  },
+  "acceptance": {
+    "freshCheckoutBuilds": false,
+    "browserDemoStarts": false,
+    "mapViewerStarts": false,
+    "assetLeakCheckPasses": false,
+    "status": "IN_PROGRESS"
+  }
+}
