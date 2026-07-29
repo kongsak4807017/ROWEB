@@ -17,6 +17,16 @@ roBrowserLegacy runtime
 
 Unity WebGL is no longer the primary delivery lane. It may remain an R&D/reference track, but ROWEB will not reimplement Ragnarok map, model, SPR/ACT, packet, and entity behavior from zero when roBrowserLegacy already contains a working browser implementation.
 
+## Current execution status
+
+```text
+Active work package: WP0 — Baseline intake
+Status: IN PROGRESS
+Branch: feat/wp0-baseline-intake
+```
+
+WP0 pins the exact roBrowserLegacy and rAthena commits, protects the asset boundary, and provides reproducible PowerShell bootstrap/status commands. See [`docs/WP0_BASELINE_INTAKE.md`](docs/WP0_BASELINE_INTAKE.md) and [`compatibility.lock.json`](compatibility.lock.json).
+
 ## North Star
 
 A first-time player opens one URL and can:
@@ -59,6 +69,8 @@ Player Browser
 ## Repository documents
 
 - [`AGENTS.md`](AGENTS.md) — operating contract for AI agents and developers
+- [`compatibility.lock.json`](compatibility.lock.json) — pinned client/server compatibility baseline
+- [`docs/WP0_BASELINE_INTAKE.md`](docs/WP0_BASELINE_INTAKE.md) — current baseline execution runbook
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — target system architecture
 - [`docs/ASSET_DELIVERY_AND_PATCHING.md`](docs/ASSET_DELIVERY_AND_PATCHING.md) — automatic asset delivery, cache, and patch model
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased implementation roadmap
