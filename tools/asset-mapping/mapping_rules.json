@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "source_roots": ["src", "data", "assets"],
+  "extensions": ["bmp","tga","png","jpg","jpeg","gif","webp","svg","spr","act","rsw","gnd","gat","rsm","str","wav","mp3","ogg","xml","lua","bson","grf"],
+  "categories": [
+    {"name":"UI","patterns":["ui/","interface","유저인터페이스","cursor","button","window","icon"]},
+    {"name":"Map","patterns":[".rsw",".gnd",".gat",".rsm","map/"]},
+    {"name":"Entity","patterns":[".spr",".act","monster","npc","job","sprite/"]},
+    {"name":"Effect","patterns":[".str","effect/"]},
+    {"name":"Audio","patterns":[".wav",".mp3",".ogg","bgm/","audio/","sound/"]}
+  ],
+  "rathena_domains": [
+    {"domain":"item","source_patterns":["item_db","iteminfo","collection","item/"]},
+    {"domain":"monster","source_patterns":["mob_db","monster","mob/"]},
+    {"domain":"skill","source_patterns":["skill_db","skillinfo","skill/"]},
+    {"domain":"map","source_patterns":["mapindex","maps/",".rsw",".gnd",".gat"]},
+    {"domain":"npc","source_patterns":["npc","npcidentity"]},
+    {"domain":"job","source_patterns":["jobidentity","jobname","sprite/"]}
+  ]
+}
