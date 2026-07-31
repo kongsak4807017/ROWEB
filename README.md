@@ -72,6 +72,8 @@ Player Browser
 - [`compatibility.lock.json`](compatibility.lock.json) — pinned client/server compatibility baseline
 - [`docs/WP0_BASELINE_INTAKE.md`](docs/WP0_BASELINE_INTAKE.md) — current baseline execution runbook
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — target system architecture
+- [`docs/COMPATIBILITY_PROFILE.md`](docs/COMPATIBILITY_PROFILE.md) — authoritative rAthena protocol and binary lock
+- [`docs/RISK_REGISTER.md`](docs/RISK_REGISTER.md) — central blocker and risk register
 - [`docs/ASSET_DELIVERY_AND_PATCHING.md`](docs/ASSET_DELIVERY_AND_PATCHING.md) — automatic asset delivery, cache, and patch model
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased implementation roadmap
 - [`docs/IMPLEMENTATION_PLAYBOOK.md`](docs/IMPLEMENTATION_PLAYBOOK.md) — executable work packages and acceptance gates

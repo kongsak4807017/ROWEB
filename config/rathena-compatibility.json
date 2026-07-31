@@ -1,0 +1,107 @@
+{
+  "schema": "roweb-rathena-compatibility/v1",
+  "risk_id": "R-COMPAT-001",
+  "status": "VERIFIED_CLOSED",
+  "canonical_source": {
+    "path": "C:\\Ragnarok-Prontera\\rathena",
+    "repository": "kongsak4807017/rathena",
+    "commit": "0c3ca757ad35fff003130a8441a10f27cccd0ed9",
+    "checkout_state": "detached_head",
+    "tracked_worktree": "clean",
+    "shallow": true,
+    "origin_master": "0c3ca757ad35fff003130a8441a10f27cccd0ed9",
+    "upstream_master": "0c3ca757ad35fff003130a8441a10f27cccd0ed9"
+  },
+  "build": {
+    "build_directory": "build/ragnarok-web-smoke",
+    "build_type": "RelWithDebInfo",
+    "generator": "Unix Makefiles",
+    "compiler": "GCC 13.3.0",
+    "packetver": 20211103,
+    "clean_rebuild_required": true,
+    "binary_provenance_method": "controlled_clean_rebuild_with_reproducible_sha256_and_elf_build_id",
+    "binaries": {
+      "login-server": {
+        "sha256": "9dc1c96f92ab2fd6f9d8fc70a9174ca62d6b8d9cfbd52270304e608c2e9f5f29",
+        "elf_build_id": "9ce3b11d2a8229892ffc7134cf27e77f6eee34eb"
+      },
+      "char-server": {
+        "sha256": "ecd6d13c249cd9ee9dc7535b0646982900323a4fc036c50f2cba8f06dab7fe2d",
+        "elf_build_id": "fe8de7e2e17c1e14892601735fd939848ce882f4"
+      },
+      "map-server": {
+        "sha256": "33cbd5b8d82b7b10dd7a47a64d425f7f1afe0608ad374d7820401e19e7c93b30",
+        "elf_build_id": "eaf07397bfb59069ed593f5143fda6c04f8b633e"
+      }
+    },
+    "evidence": "C:\\Ragnarok-Prontera\\Generated\\wp4a-compatibility\\rathena-binary-provenance.json"
+  },
+  "protocol": {
+    "packetver": 20211103,
+    "client_family": "RagexeRE",
+    "packet_shuffle_active": false,
+    "map_connection_packet": {
+      "id": "0x0436",
+      "length": 23,
+      "parser": "clif_parse_WantToConnection",
+      "field_offsets": [2, 6, 10, 14, 22]
+    },
+    "packet_obfuscation": {
+      "compile_macro_defined": true,
+      "active": false,
+      "keys": ["0x00000000", "0x00000000", "0x00000000"],
+      "custom_keys": false
+    },
+    "gameplay_mode": "Renewal",
+    "ports": {
+      "login": 6900,
+      "character": 6121,
+      "map": 5121,
+      "database": 3307
+    },
+    "bind_scope": "127.0.0.1"
+  },
+  "encoding": {
+    "wire_character_names": "fixed_length_null_terminated_bytes",
+    "name_length_bytes_including_null": 24,
+    "maximum_name_payload_bytes": 23,
+    "client_text_encoding": "not_explicitly_pinned_by_rathena",
+    "database_connection_codepage": "utf8mb4",
+    "database_character_set": "utf8mb4",
+    "database_collation": "utf8mb4_unicode_ci"
+  },
+  "authentication": {
+    "game_login": "standard_rathena_username_password",
+    "tracked_custom_auth_changes": [],
+    "web_auth_token_enabled": true,
+    "web_auth_token_is_game_login_replacement": false,
+    "web_auth_token_schema_required": true,
+    "wp4b_log_risk": "failed web token verification currently logs submitted token"
+  },
+  "database": {
+    "engine": "MariaDB 11.4",
+    "new_install_schema": ["sql-files/main.sql", "sql-files/web.sql"],
+    "optional_log_schema": "sql-files/logs.sql",
+    "existing_install_upgrade_required": "sql-files/upgrades through upgrade_20260225.sql",
+    "observed_login_columns": {
+      "web_auth_token": "varchar(17) nullable",
+      "web_auth_token_enabled": "tinyint(2) not null"
+    }
+  },
+  "bypass": {
+    "force_allowed": false,
+    "compatibility_bypass_allowed": false,
+    "prohibited_environment_variables": [
+      "FORCE",
+      "RATHENA_FORCE",
+      "RATHENA_COMPATIBILITY_BYPASS",
+      "ROWEB_COMPATIBILITY_BYPASS"
+    ]
+  },
+  "runtime_smoke": {
+    "result": "PASS_RATHENA_AUTHORITATIVE_COMPATIBILITY_SMOKE",
+    "evidence": "C:\\Ragnarok-Prontera\\Generated\\wp4a-compatibility\\rathena-runtime-smoke-final.log",
+    "running_binary_identity_required": true,
+    "cleanup_required": true
+  }
+}
