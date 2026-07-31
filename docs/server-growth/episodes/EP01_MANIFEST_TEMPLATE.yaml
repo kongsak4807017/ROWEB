@@ -1,0 +1,98 @@
+schemaVersion: roweb.episode-service-pack/v1
+episodeId: EP01
+servicePackId: SP01.0
+name: Start of Adventure
+version: 0.1.0
+status: building
+ownerApprovalRequired: true
+compatibilityProfile: RW_CLASSIC_PRE_RE_V1
+requires: []
+releaseWaves:
+  - id: SP01.0-A
+    name: Technical launch and onboarding
+    disposition: planned
+  - id: SP01.0-B
+    name: Core towns and beginner fields
+    disposition: planned
+  - id: SP01.0-C
+    name: First-job progression
+    disposition: planned
+  - id: SP01.0-D
+    name: Early dungeons and economy expansion
+    disposition: planned
+  - id: SP01.0-E
+    name: Social and guild features
+    disposition: planned
+content:
+  maps: []
+  warps: []
+  npcs: []
+  scripts: []
+  jobs: []
+  skills: []
+  monsters: []
+  spawns: []
+  items: []
+  drops: []
+  shops: []
+  quests: []
+  socialSystems: []
+client:
+  assetManifest: null
+  uiSchemaRelease: null
+  themeRelease: null
+  localizationRelease: null
+  reloadSummary:
+    hot: 0
+    uiReopen: 0
+    entityRespawn: 0
+    mapReentry: 0
+    pageRefresh: 0
+    reconnect: 0
+    maintenance: 0
+assetRoots:
+  consumerSourceRoot: external:roBrowserLegacy
+  canonicalAssetRoot: external:extracted-assets
+  publishedAssetRoot: external:remote-client-data
+validation:
+  compatibility: pending
+  serverConfiguration: pending
+  maps: pending
+  mapBundles: pending
+  warpGraph: pending
+  npcScripts: pending
+  jobProgression: pending
+  monsterSpawns: pending
+  itemCrossReferences: pending
+  clientAssetMapping: pending
+  publishedHashes: pending
+  uiInteractions: pending
+  localization: pending
+  economySimulation: pending
+  securityAndAbuse: pending
+  backup: pending
+  stagingPlaytest: pending
+  browserE2E: pending
+  rollbackRehearsal: pending
+approvals:
+  contentOwner: null
+  assetOwner: null
+  serverAdministrator: null
+  economyReviewer: null
+  securityReviewer: null
+  finalOwner: null
+release:
+  stagingReleaseId: null
+  productionReleaseId: null
+  previousProductionReleaseId: null
+  scheduledAt: null
+  activatedAt: null
+rollback:
+  targetReleaseId: null
+  serverContentReleaseId: null
+  clientAssetReleaseId: null
+  uiSchemaReleaseId: null
+  databaseCompensationPlan: null
+  cacheInvalidationPlan: null
+  rehearsalEvidence: null
+notes: []
