@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0; url=unified-workbench.html">
-<title>Opening ROWeb Operations Workbench</title>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071019;color:#eef5f8;font:16px Segoe UI,system-ui,sans-serif}main{max-width:620px;padding:28px;border:1px solid #223746;border-radius:12px;background:#0e1b26;text-align:center}a{color:#48d7b0}</style>
+<title>ROWeb Operations Workbench</title>
+<style>
+:root{--bg:#071019;--panel:#0e1b26;--line:#223746;--text:#eef5f8;--muted:#8da4b2;--green:#48d7b0;--blue:#6da8ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 80% 0,#102c2d 0,transparent 30%),var(--bg);color:var(--text);font:16px Segoe UI,system-ui,sans-serif}main{width:min(980px,calc(100% - 28px));padding:30px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.15em;font-weight:800}h1{font-size:36px;margin:8px 0}p{color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}.card{display:block;padding:24px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#11222e,#0b1822);color:var(--text);text-decoration:none;transition:.15s}.card:hover{transform:translateY(-2px);border-color:var(--green)}.card strong{display:block;font-size:22px;margin-bottom:8px}.card span{color:var(--muted);line-height:1.55}.badge{display:inline-block;margin-top:16px;padding:5px 8px;border-radius:99px;border:1px solid #285b50;color:var(--green);font-size:12px}@media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
 </head>
-<body><main><h1>ROWeb Operations Workbench</h1><p>กำลังเปิด Unified Admin Studio + Player Experience Workbench…</p><p><a href="unified-workbench.html">เปิด Workbench</a></p></main>
-<script>location.replace('unified-workbench.html');</script>
-</body>
+<body><main><div class="eyebrow">ONE-STOP ROWEB CONTROL PLANE</div><h1>ROWeb Operations Workbench</h1><p>เลือกพื้นที่ทำงาน โดยทั้งสองส่วนใช้ไฟล์ในโฟลเดอร์เดียวกันและเปิดผ่าน HTTP server เดียวกัน</p><div class="grid"><a class="card" href="unified-workbench.html"><strong>Operations & Admin Studio</strong><span>Command Center, Player Operations, Economy, Anti-abuse, Release Manager และ Unified Audit</span><div class="badge">Server + Operations</div></a><a class="card" href="player-ui-catalog-studio.html"><strong>Catalog-driven Player UI Studio</strong><span>ค้นหา UI Components ทั้งหมด, Variants, Source files, Asset usage, Desktop/Mobile preview และ Dependency Inspector</span><div class="badge">Player Experience + Assets</div></a></div></main></body>
 </html>
