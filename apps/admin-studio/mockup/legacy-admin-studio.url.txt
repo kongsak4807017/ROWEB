@@ -1,0 +1,1 @@
+The previous standalone Admin Studio entry point was replaced by the unified Workbench entry point on this branch. Its server-operation views remain represented inside unified-workbench.html. Git history preserves the original standalone implementation.
