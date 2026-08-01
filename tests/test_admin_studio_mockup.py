@@ -29,8 +29,23 @@ def test_navigation_targets_have_matching_views():
         assert f'id="{view}"' in html
 
 
+def test_only_local_profile_fetch_is_present():
+    html = WORKBENCH_HTML.read_text(encoding="utf-8")
+    fetch_targets = re.findall(r"fetch\(\s*['\"]([^'\"]+)['\"]", html)
+    assert fetch_targets == ["player-ui-profiles.json"]
+
+
 def test_no_production_connection_primitives_are_present():
     html = WORKBENCH_HTML.read_text(encoding="utf-8")
-    forbidden = ["fetch(", "WebSocket(", "XMLHttpRequest", "mysql.connect", "atcommand("]
+    forbidden = [
+        "WebSocket(",
+        "XMLHttpRequest",
+        "mysql.connect",
+        "atcommand(",
+        "fetch('http",
+        'fetch("http',
+        "fetch('//",
+        'fetch("//',
+    ]
     for token in forbidden:
         assert token not in html
