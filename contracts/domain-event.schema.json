@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/domain-event.schema.json",
+  "title": "ROWEB Domain Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "event_type", "occurred_at", "session_correlation_id", "payload"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "event_id": {"type": "string", "format": "uuid"},
+    "event_type": {
+      "enum": [
+        "session.login.accepted",
+        "session.character.list.received",
+        "session.character.selected",
+        "world.map.entered",
+        "world.entity.spawned",
+        "world.entity.moved",
+        "combat.damage.applied",
+        "inventory.item.added",
+        "npc.dialog.opened",
+        "party.member.updated"
+      ]
+    },
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "session_correlation_id": {"type": "string", "format": "uuid"},
+    "sequence": {"type": "integer", "minimum": 0},
+    "payload": {"type": "object"}
+  }
+}

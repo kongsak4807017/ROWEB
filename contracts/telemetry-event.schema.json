@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/telemetry-event.schema.json",
+  "title": "ROWEB Client Telemetry Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_type", "occurred_at", "client_type", "client_version", "compatibility_profile", "session_correlation_id", "device_profile", "measurements"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "event_type": {
+      "enum": [
+        "client.boot.started",
+        "client.boot.completed",
+        "asset.request.started",
+        "asset.request.failed",
+        "gateway.connected",
+        "session.login.completed",
+        "map.load.started",
+        "map.load.completed",
+        "client.frame.performance",
+        "client.memory.snapshot",
+        "client.error"
+      ]
+    },
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "client_type": {"enum": ["robrowser", "unity"]},
+    "client_version": {"type": "string", "minLength": 1, "maxLength": 64},
+    "compatibility_profile": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+    "session_correlation_id": {"type": "string", "format": "uuid"},
+    "device_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "browser_family", "memory_class_mb"],
+      "properties": {
+        "platform": {"type": "string", "minLength": 1, "maxLength": 64},
+        "browser_family": {"type": "string", "minLength": 1, "maxLength": 64},
+        "memory_class_mb": {"type": "integer", "minimum": 128, "maximum": 65536},
+        "gpu_family": {"type": "string", "maxLength": 120}
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": {"type": ["number", "integer", "string", "boolean", "null"]}
+    },
+    "error_code": {"type": "string", "maxLength": 120}
+  }
+}

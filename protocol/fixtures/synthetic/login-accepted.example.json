@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "fixture_id": "login.accepted.synthetic-v1",
+  "direction": "server_to_client",
+  "packet_id": "0x0069",
+  "packetver": null,
+  "raw_hex": "69002f00000001000000020000000300000004000000",
+  "decoded": {
+    "account_id": 1,
+    "login_id1": 2,
+    "login_id2": 3,
+    "sex": 0,
+    "server_count": 1
+  },
+  "expected_domain_event": "session.login.accepted",
+  "scenario": "Synthetic login acceptance used only to validate fixture structure before verified runtime captures exist.",
+  "synthetic": true,
+  "notes": "Not captured from production and contains no real account, credential, ticket, or personal data."
+}

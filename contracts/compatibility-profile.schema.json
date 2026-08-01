@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/compatibility-profile.schema.json",
+  "title": "ROWEB Compatibility Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_id", "server", "protocol", "clients"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "profile_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "gameplay_mode"],
+      "properties": {
+        "repository": {"const": "kongsak4807017/rathena"},
+        "commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "gameplay_mode": {"enum": ["pre-renewal", "renewal"]}
+      }
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packetver_status", "packetver", "client_family", "packet_obfuscation", "encoding"],
+      "properties": {
+        "packetver_status": {"enum": ["pending-runtime-verification", "verified"]},
+        "packetver": {"type": ["integer", "null"], "minimum": 20000101, "maximum": 20991231},
+        "client_family": {"enum": ["main", "re", "zero", "unknown"]},
+        "packet_obfuscation": {"type": ["boolean", "null"]},
+        "encoding": {"enum": ["cp949", "utf-8", "cp949-utf8-bridge"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"packetver_status": {"const": "verified"}}},
+          "then": {"properties": {"packetver": {"type": "integer"}}}
+        }
+      ]
+    },
+    "clients": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["robrowser", "unity"],
+      "properties": {
+        "robrowser": {"$ref": "#/$defs/client"},
+        "unity": {"$ref": "#/$defs/client"}
+      }
+    }
+  },
+  "$defs": {
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supported", "conformance_level"],
+      "properties": {
+        "supported": {"type": "boolean"},
+        "conformance_level": {"enum": ["production", "experimental", "planned", "unsupported"]}
+      }
+    }
+  }
+}

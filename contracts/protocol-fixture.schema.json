@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/protocol-fixture.schema.json",
+  "title": "ROWEB Synthetic Protocol Fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_id", "direction", "packet_id", "packetver", "raw_hex", "decoded", "expected_domain_event", "scenario", "synthetic"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "fixture_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "direction": {"enum": ["client_to_server", "server_to_client"]},
+    "packet_id": {"type": "string", "pattern": "^0x[a-fA-F0-9]{4}$"},
+    "packetver": {"type": ["integer", "null"], "minimum": 20000101, "maximum": 20991231},
+    "raw_hex": {"type": "string", "pattern": "^(?:[a-fA-F0-9]{2})+$", "minLength": 4},
+    "decoded": {"type": "object"},
+    "expected_domain_event": {"type": "string", "minLength": 1},
+    "scenario": {"type": "string", "minLength": 1, "maxLength": 240},
+    "synthetic": {"const": true},
+    "notes": {"type": "string", "maxLength": 500}
+  }
+}
