@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "generatedBy": "tools/player-ui/build_catalog.py",
+  "sourceRoot": null,
+  "assetRoot": null,
+  "stats": {
+    "components": 0,
+    "variants": 0,
+    "sourceFiles": 0,
+    "assetReferences": 0,
+    "matchedAssets": 0,
+    "ambiguousAssets": 0,
+    "missingAssets": 0
+  },
+  "categories": [],
+  "components": []
+}
