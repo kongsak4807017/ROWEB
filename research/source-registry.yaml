@@ -1,0 +1,67 @@
+schema_version: 1
+reviewed_at: "2026-08-01"
+sources:
+  - id: robrowser-legacy
+    repository: kongsak4807017/roBrowserLegacy
+    ref: e84bfdcdadb791ba18fb501943e8e992ba8f646a
+    ref_type: commit
+    license: review-required-before-public-release
+    roles:
+      - production-client-baseline
+      - browser-behavior-reference
+      - golden-runtime-evidence-source
+    allowed_use:
+      - pinned-production-runtime
+      - compatibility-analysis
+    prohibited_use:
+      - unreviewed-public-release
+    production_dependency: true
+
+  - id: rathena
+    repository: kongsak4807017/rathena
+    ref: 0c3ca757ad35fff003130a8441a10f27cccd0ed9
+    ref_type: commit
+    license: GPL-3.0
+    roles:
+      - authoritative-game-server
+      - compatibility-baseline
+    allowed_use:
+      - production-server
+      - protocol-evidence
+    prohibited_use:
+      - replacement-by-unapproved-custom-server
+    production_dependency: true
+
+  - id: unityro
+    repository: kongsak4807017/unityro
+    upstream: guilhermelhr/unityro
+    ref: 0.6.1
+    ref_type: tag
+    license: AGPL-3.0
+    roles:
+      - unity-athena-protocol-reference
+      - ro-format-rendering-reference
+    allowed_use:
+      - research
+      - behavior-comparison
+    prohibited_use:
+      - production-dependency-without-license-review
+      - direct-copy-without-approval
+    production_dependency: false
+
+  - id: ragnarok-rebuild-tcp
+    repository: kongsak4807017/RagnarokRebuildTcp
+    ref: 8b6ea97bcd23a7e60cc9abc27df6911ae19b423d
+    ref_type: commit
+    license: repository-license-review-required
+    roles:
+      - unity-asset-pipeline-reference
+      - rendering-reference
+      - custom-protocol-research
+    allowed_use:
+      - research
+      - architecture-comparison
+    prohibited_use:
+      - replacing-rathena
+      - assuming-direct-rathena-compatibility
+    production_dependency: false
