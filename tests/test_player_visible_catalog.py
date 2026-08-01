@@ -114,6 +114,14 @@ def test_studio_has_square_previews_and_file_actions():
     assert 'data-action="open"' in html
 
 
+def test_studio_has_status_filter_and_sort_controls():
+    html = STUDIO.read_text(encoding="utf-8")
+    assert 'id="statusFilter"' in html
+    assert 'id="sortOrder"' in html
+    assert 'value="status-asc"' in html
+    assert "localeCompare" in html
+
+
 def test_catalog_reports_item_source_candidates(tmp_path):
     data = run_scan(tmp_path)
     assert data["scan"]["itemInfoCandidates"] >= 1
