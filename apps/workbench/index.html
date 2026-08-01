@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ROWeb Player Experience Workbench</title>
+  <style>
+    :root{--bg:#0b1220;--panel:#111a2b;--panel2:#18243a;--line:#2a3956;--text:#eef4ff;--muted:#9fb0ca;--accent:#55a8ff;--ok:#4fd18b;--warn:#ffbf69;--danger:#ff6b7a;--radius:14px;--gap:12px;font-family:Inter,Segoe UI,Tahoma,sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}.app{display:grid;grid-template-rows:auto 1fr;min-height:100vh}.topbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:#0e1728;position:sticky;top:0;z-index:20}.topbar h1{font-size:18px;margin:0 14px 0 0}.topbar label{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:13px}.topbar select,.topbar button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px}.topbar button.primary{background:var(--accent);color:#07111f;border-color:transparent;font-weight:700}.layout{display:grid;grid-template-columns:230px minmax(0,1fr) 300px;min-height:calc(100vh - 62px)}.sidebar,.inspector{padding:14px;border-right:1px solid var(--line);background:#0e1728}.inspector{border-right:0;border-left:1px solid var(--line)}.sidebar h2,.inspector h2{font-size:14px;margin:8px 0;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.navbtn,.component-btn{display:flex;width:100%;justify-content:space-between;align-items:center;padding:9px 10px;margin:5px 0;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--text);text-align:left}.navbtn:hover,.component-btn:hover,.navbtn.active,.component-btn.active{background:var(--panel2);border-color:var(--line)}.badge{font-size:11px;padding:2px 7px;border-radius:999px;background:#24324b;color:var(--muted)}.workspace{padding:16px;overflow:auto}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.toolbar .status{color:var(--muted);font-size:13px}.preview-shell{background:#090f19;border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;justify-content:center;min-height:620px}.device-frame{position:relative;overflow:hidden;background:#1f3a2d;border:8px solid #263349;box-shadow:0 0 0 1px #445577;border-radius:18px;transition:.2s;width:1180px;aspect-ratio:16/9;max-width:100%}.device-frame.mobile-landscape{width:900px;aspect-ratio:19.5/9;border-radius:30px}.device-frame.mobile-portrait{width:390px;aspect-ratio:9/19.5;border-radius:34px}.world{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,#5e855f 0 18%,#3e6447 35%,#283f39 65%,#1c2b33 100%)}.world:before{content:"Prontera Field Preview";position:absolute;inset:45% 0 auto;text-align:center;color:#d9ebd7;opacity:.65;font-size:clamp(16px,2vw,28px)}.ui{position:absolute;inset:0;pointer-events:none}.widget{position:absolute;background:rgba(12,20,34,.88);border:1px solid rgba(148,178,220,.45);border-radius:10px;padding:9px;color:white;pointer-events:auto;user-select:none}.widget.selected{outline:2px solid var(--accent);outline-offset:2px}.widget .title{font-size:12px;color:#b8c8df;margin-bottom:5px}.hp{left:12px;top:12px;width:260px}.bars{display:grid;gap:5px}.bar{height:10px;border-radius:99px;background:#29354b;overflow:hidden}.bar span{display:block;height:100%;background:#5ed28d}.bar.sp span{background:#57a8ff}.minimap{right:12px;top:12px;width:165px;height:150px}.mini-grid{height:110px;border-radius:7px;background:linear-gradient(45deg,#3e5d52 25%,#496b5b 25% 50%,#3e5d52 50% 75%,#496b5b 75%);background-size:22px 22px;position:relative}.mini-grid:after{content:"●";position:absolute;left:48%;top:45%;color:#ffdd75}.chat{left:12px;bottom:12px;width:370px;height:135px}.chat p{margin:3px 0;font-size:12px;color:#d6e0ef}.hotbar{left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px}.slot,.action{width:48px;height:48px;border-radius:9px;border:1px solid #7183a0;background:#22304a;display:grid;place-items:center;font-weight:700}.target{left:50%;top:12px;transform:translateX(-50%);width:260px;text-align:center}.mobile-controls{display:none}.mobile-landscape .mobile-controls,.mobile-portrait .mobile-controls{display:block}.joystick{left:22px;bottom:22px;width:128px;height:128px;border-radius:50%;background:rgba(20,28,45,.48);border:2px solid rgba(220,235,255,.45)}.joystick:after{content:"";position:absolute;width:54px;height:54px;border-radius:50%;left:36px;top:36px;background:rgba(220,235,255,.7)}.actions{right:20px;bottom:20px;display:grid;grid-template-columns:repeat(3,58px);gap:9px;background:transparent;border:0}.actions .action{width:58px;height:58px;border-radius:50%;background:rgba(38,56,88,.82)}.actions .attack{grid-column:3;grid-row:2;width:72px;height:72px;background:#8f4053}.mobile-landscape .chat{display:none}.mobile-landscape .hotbar{display:none}.mobile-landscape .hp{width:220px}.mobile-landscape .minimap{width:140px;height:125px}.mobile-portrait .target{top:82px;width:210px}.mobile-portrait .minimap{width:105px;height:95px}.mobile-portrait .mini-grid{height:58px}.mobile-portrait .hp{width:205px}.mobile-portrait .chat,.mobile-portrait .hotbar{display:none}.mobile-portrait .joystick{width:105px;height:105px}.mobile-portrait .joystick:after{left:28px;top:28px;width:46px;height:46px}.mobile-portrait .actions{grid-template-columns:repeat(2,52px)}.mobile-portrait .actions .action{width:52px;height:52px}.mobile-portrait .actions .attack{grid-column:2;grid-row:2;width:64px;height:64px}.property{margin:10px 0}.property label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.property input,.property select{width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:8px}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.switch{display:flex;justify-content:space-between;align-items:center;padding:9px 0;color:var(--muted);font-size:13px}.switch input{width:auto}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}.checks{font-size:12px;display:grid;gap:6px}.ok{color:var(--ok)}.warn{color:var(--warn)}.danger{color:var(--danger)}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:7px 9px}.tabs button.active{background:var(--accent);color:#07111f}.panel{display:none}.panel.active{display:block}.toast{position:fixed;right:18px;bottom:18px;background:#18263d;border:1px solid #4f6687;border-radius:12px;padding:11px 14px;display:none;z-index:50}.toast.show{display:block}@media(max-width:980px){.layout{grid-template-columns:190px 1fr}.inspector{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}.preview-shell{min-height:500px}}@media(max-width:680px){.layout{display:block}.sidebar{border-right:0;border-bottom:1px solid var(--line)}.sidebar .navlist{display:grid;grid-template-columns:repeat(2,1fr)}.inspector{border-top:1px solid var(--line)}.preview-shell{padding:6px;min-height:430px}.topbar{position:static}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <h1>ROWeb Player Experience Workbench</h1>
+    <label>Scene <select id="scene"><option>Main HUD</option><option>Combat</option><option>Inventory</option><option>NPC Dialog</option><option>Login</option><option>Character Select</option></select></label>
+    <label>Device <select id="device"><option value="desktop">Desktop</option><option value="mobile-landscape">Mobile Landscape</option><option value="mobile-portrait">Mobile Portrait</option></select></label>
+    <label>Episode <select id="episode"></select></label>
+    <button id="save">Save Draft</button><button id="validate">Validate</button><button id="publish" class="primary">Publish Profile</button>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Workbench</h2>
+      <div class="navlist">
+        <button class="navbtn active" data-panel="studio">Player UI Studio <span class="badge">Live</span></button>
+        <button class="navbtn" data-panel="mobile">Mobile Controls <span class="badge">14</span></button>
+        <button class="navbtn" data-panel="assets">Asset Bindings <span class="badge">8</span></button>
+        <button class="navbtn" data-panel="episodes">EP1–17 <span class="badge">17</span></button>
+        <button class="navbtn" data-panel="validation">Validation <span class="badge">9</span></button>
+        <button class="navbtn" data-panel="release">Release <span class="badge">Draft</span></button>
+      </div>
+      <h2>Components</h2>
+      <button class="component-btn active" data-widget="hp">Basic Info <span class="badge">HUD</span></button>
+      <button class="component-btn" data-widget="target">Target Info <span class="badge">HUD</span></button>
+      <button class="component-btn" data-widget="minimap">Minimap <span class="badge">HUD</span></button>
+      <button class="component-btn" data-widget="chat">Chat <span class="badge">Desktop</span></button>
+      <button class="component-btn" data-widget="hotbar">Hotbar <span class="badge">Desktop</span></button>
+      <button class="component-btn" data-widget="joystick">Joystick <span class="badge">Mobile</span></button>
+      <button class="component-btn" data-widget="actions">Action Buttons <span class="badge">Mobile</span></button>
+    </aside>
+
+    <main class="workspace">
+      <section id="studio" class="panel active">
+        <div class="toolbar"><div><strong id="viewTitle">Main HUD · Desktop</strong><div class="status">แก้ค่าใน Inspector แล้วดูผลทันที</div></div><div class="tabs"><button class="active">Preview</button><button>Interaction Test</button><button>Data State</button></div></div>
+        <div class="preview-shell"><div id="frame" class="device-frame desktop"><div class="world"></div><div class="ui">
+          <div id="hp" class="widget hp selected"><div class="title">Arshavin · Swordman Lv.18</div><div class="bars"><div class="bar"><span style="width:78%"></span></div><div class="bar sp"><span style="width:64%"></span></div></div></div>
+          <div id="target" class="widget target"><div class="title">Target</div><strong>Poring</strong><div class="bar" style="margin-top:5px"><span style="width:52%"></span></div></div>
+          <div id="minimap" class="widget minimap"><div class="title">prt_fild08</div><div class="mini-grid"></div></div>
+          <div id="chat" class="widget chat"><div class="title">General</div><p>[System] Welcome to ROWEB</p><p>Arshavin: ทดสอบ UI Desktop/Mobile</p><p>[Party] Ready for EP1</p></div>
+          <div id="hotbar" class="widget hotbar"><div class="slot">1</div><div class="slot">2</div><div class="slot">3</div><div class="slot">4</div><div class="slot">5</div><div class="slot">6</div></div>
+          <div id="joystick" class="widget joystick mobile-controls"></div>
+          <div id="actions" class="widget actions mobile-controls"><div class="action">S1</div><div class="action">S2</div><div class="action">T</div><div class="action">S3</div><div class="action">S4</div><div class="action attack">ATK</div></div>
+        </div></div></div>
+      </section>
+      <section id="mobile" class="panel"><div class="card"><h3>Mobile Control Profile</h3><p>Joystick, Attack, Target, Skill 1–4, Potion, Interact, Chat, Menu และ Gesture ใช้ packet เดิมของ roBrowserLegacy/rAthena</p><div class="checks"><span class="ok">✓ Tap ground → movement intent</span><span class="ok">✓ Tap target → select entity</span><span class="ok">✓ Attack button → attack selected target</span><span class="warn">△ Pinch zoom adapter ต้องต่อกับ Camera</span><span class="warn">△ Skill wheel targeting ต้องต่อกับ Skill UI</span></div></div></section>
+      <section id="assets" class="panel"><div class="card"><h3>Asset Bindings</h3><div class="checks"><span class="ok">✓ ui.hud.basic-info → BasicInfoV1</span><span class="ok">✓ ui.hud.minimap → MiniMap</span><span class="warn">△ combat.damage.default → Damage.js skin 0</span><span class="warn">△ audio.weapon.hit → WeaponHitSoundTable.js</span><span class="warn">△ data.item.info → System/itemInfo.lub</span></div></div></section>
+      <section id="episodes" class="panel"><div class="card"><h3>Episode Service Pack</h3><p id="epSummary"></p><div class="checks"><span class="ok">✓ Maps manifest</span><span class="ok">✓ Monster/NPC registry</span><span class="warn">△ Item descriptions validation</span><span class="warn">△ Combat audio validation</span></div></div></section>
+      <section id="validation" class="panel"><div class="card"><h3>Validation Center</h3><div id="validationList" class="checks"></div></div></section>
+      <section id="release" class="panel"><div class="card"><h3>Release Workflow</h3><p>Draft → Validate → Preview → Publish → Rollback</p><label>Release ID <input id="releaseId" value="roweb-ui-2026.08.01.1" style="width:100%;margin-top:6px;padding:9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text)"></label></div></section>
+    </main>
+
+    <aside class="inspector">
+      <h2>Inspector</h2>
+      <div class="card"><strong id="selectedName">Basic Info</strong><div class="switch"><span>Visible</span><input id="visible" type="checkbox" checked></div>
+        <div class="row"><div class="property"><label>X</label><input id="x" type="number" value="12"></div><div class="property"><label>Y</label><input id="y" type="number" value="12"></div></div>
+        <div class="row"><div class="property"><label>Width</label><input id="width" type="number" value="260"></div><div class="property"><label>Scale</label><input id="scale" type="number" step="0.05" value="1"></div></div>
+        <div class="property"><label>Anchor</label><select id="anchor"><option>top-left</option><option>top-center</option><option>top-right</option><option>bottom-left</option><option>bottom-center</option><option>bottom-right</option></select></div>
+        <div class="property"><label>Opacity</label><input id="opacity" type="range" min="20" max="100" value="88"></div>
+      </div>
+      <div class="card"><h3 style="margin-top:0">Device Profile</h3><div class="switch"><span>Allow player override</span><input id="override" type="checkbox" checked></div><div class="switch"><span>Safe-area padding</span><input id="safeArea" type="checkbox" checked></div><div class="property"><label>Touch target size</label><input id="touchSize" type="number" value="56"></div></div>
+      <div class="card"><h3 style="margin-top:0">Runtime Binding</h3><div class="checks"><span>Component: <b id="binding">BasicInfo</b></span><span>Source: <b>roBrowserLegacy</b></span><span>Profile: <b id="profileName">desktop-v1</b></span></div></div>
+    </aside>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const frame=$('#frame'), device=$('#device'), viewTitle=$('#viewTitle'), toast=$('#toast');
+const names={hp:'Basic Info',target:'Target Info',minimap:'Minimap',chat:'Chat',hotbar:'Hotbar',joystick:'Joystick',actions:'Action Buttons'};
+const bindings={hp:'BasicInfo',target:'TargetInfo',minimap:'MiniMap',chat:'ChatBox',hotbar:'ShortCut',joystick:'VirtualJoystick',actions:'MobileActionButtons'};
+const states={}; let selected='hp';
+for(let i=1;i<=17;i++) $('#episode').insertAdjacentHTML('beforeend',`<option>EP${String(i).padStart(2,'0')}</option>`);
+function msg(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+function selectWidget(id){selected=id;$$('.widget').forEach(x=>x.classList.remove('selected'));$('#'+id).classList.add('selected');$$('.component-btn').forEach(x=>x.classList.toggle('active',x.dataset.widget===id));$('#selectedName').textContent=names[id];$('#binding').textContent=bindings[id];loadInspector()}
+function loadInspector(){const el=$('#'+selected),r=el.getBoundingClientRect(),f=frame.getBoundingClientRect(),s=states[selected]||{};$('#x').value=s.x??Math.round(r.left-f.left-8);$('#y').value=s.y??Math.round(r.top-f.top-8);$('#width').value=s.width??Math.round(r.width);$('#scale').value=s.scale??1;$('#opacity').value=s.opacity??88;$('#visible').checked=s.visible??true;$('#anchor').value=s.anchor??'top-left'}
+function apply(){const el=$('#'+selected),st=states[selected]??={};st.x=+$('input#x').value;st.y=+$('input#y').value;st.width=+$('input#width').value;st.scale=+$('input#scale').value;st.opacity=+$('input#opacity').value;st.visible=$('#visible').checked;st.anchor=$('#anchor').value;el.style.width=st.width+'px';el.style.opacity=st.opacity/100;el.style.scale=st.scale;el.style.display=st.visible?'':'none';el.style.transform='none';el.style.left='auto';el.style.right='auto';el.style.top='auto';el.style.bottom='auto';if(st.anchor.includes('left'))el.style.left=st.x+'px';if(st.anchor.includes('right'))el.style.right=st.x+'px';if(st.anchor.includes('top'))el.style.top=st.y+'px';if(st.anchor.includes('bottom'))el.style.bottom=st.y+'px';if(st.anchor.includes('center')){el.style.left='50%';el.style.transform='translateX(-50%)'}}
+$$('.component-btn').forEach(b=>b.addEventListener('click',()=>selectWidget(b.dataset.widget)));$$('.widget').forEach(w=>w.addEventListener('click',e=>{e.stopPropagation();selectWidget(w.id)}));['x','y','width','scale','opacity','visible','anchor'].forEach(id=>$('#'+id).addEventListener('input',apply));
+device.addEventListener('change',()=>{frame.className='device-frame '+device.value;viewTitle.textContent=$('#scene').value+' · '+device.options[device.selectedIndex].text;$('#profileName').textContent=device.value+'-v1';setTimeout(loadInspector,100)});$('#scene').addEventListener('change',()=>viewTitle.textContent=$('#scene').value+' · '+device.options[device.selectedIndex].text);
+$$('.navbtn').forEach(b=>b.addEventListener('click',()=>{$$('.navbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.panel').forEach(x=>x.classList.remove('active'));$('#'+b.dataset.panel).classList.add('active')}));
+$('#episode').addEventListener('change',()=>$('#epSummary').textContent=$('#episode').value+' ใช้ Player UI profile '+device.value+' และ manifest ของ episode เดียวกัน');
+const validations=['Asset paths resolve','Required HUD components visible','Touch targets ≥ 44px','No overlap with safe area','Damage/MISS profile configured','Attack sound binding configured','ItemInfo source configured','Desktop preview passed','Mobile preview passed'];
+function renderValidation(pass=false){$('#validationList').innerHTML=validations.map((v,i)=>`<span class="${pass||i<4?'ok':'warn'}">${pass||i<4?'✓':'△'} ${v}</span>`).join('')};renderValidation();
+$('#save').addEventListener('click',()=>msg('บันทึก Draft ในหน่วยความจำแล้ว'));$('#validate').addEventListener('click',()=>{renderValidation(true);msg('Validation ผ่าน 9/9 รายการใน Prototype')});$('#publish').addEventListener('click',()=>msg('Publish profile '+device.value+' สำหรับ '+$('#episode').value+' แล้ว'));
+selectWidget('hp');$('#epSummary').textContent='EP01 ใช้ Player UI profile desktop-v1 และ manifest ของ episode เดียวกัน';
+</script>
+</body>
+</html>
