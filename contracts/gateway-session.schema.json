@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/gateway-session.schema.json",
+  "title": "ROWEB Gateway Session",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "session_id", "session_correlation_id", "client_type", "state", "connected_at"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "session_id": {"type": "string", "format": "uuid"},
+    "session_correlation_id": {"type": "string", "format": "uuid"},
+    "client_type": {"enum": ["robrowser", "unity"]},
+    "state": {"enum": ["ticket-validated", "login", "character", "map", "closing", "closed"]},
+    "connected_at": {"type": "string", "format": "date-time"},
+    "last_activity_at": {"type": "string", "format": "date-time"},
+    "compatibility_profile": {"type": "string", "pattern": "^[A-Z0-9_]+$"}
+  }
+}
