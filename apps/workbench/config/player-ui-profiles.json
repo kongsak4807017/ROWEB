@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "activeProfile": "desktop-v1",
+  "allowPlayerOverride": true,
+  "profiles": {
+    "desktop-v1": {
+      "device": "desktop",
+      "orientation": "landscape",
+      "scene": "main-hud",
+      "safeArea": true,
+      "components": {
+        "basicInfo": { "enabled": true, "anchor": "top-left", "x": 12, "y": 12, "width": 260, "scale": 1, "opacity": 0.88 },
+        "targetInfo": { "enabled": true, "anchor": "top-center", "x": 0, "y": 12, "width": 260, "scale": 1, "opacity": 0.88 },
+        "miniMap": { "enabled": true, "anchor": "top-right", "x": 12, "y": 12, "width": 165, "scale": 1, "opacity": 0.88 },
+        "chatBox": { "enabled": true, "anchor": "bottom-left", "x": 12, "y": 12, "width": 370, "scale": 1, "opacity": 0.88 },
+        "hotbar": { "enabled": true, "anchor": "bottom-center", "x": 0, "y": 12, "width": 330, "scale": 1, "opacity": 0.88 },
+        "virtualJoystick": { "enabled": false },
+        "mobileActionButtons": { "enabled": false }
+      }
+    },
+    "mobile-landscape-v1": {
+      "device": "mobile",
+      "orientation": "landscape",
+      "scene": "main-hud",
+      "safeArea": true,
+      "touchTarget": 56,
+      "components": {
+        "basicInfo": { "enabled": true, "anchor": "top-left", "x": 12, "y": 12, "width": 220, "scale": 1, "opacity": 0.84 },
+        "targetInfo": { "enabled": true, "anchor": "top-center", "x": 0, "y": 12, "width": 230, "scale": 1, "opacity": 0.84 },
+        "miniMap": { "enabled": true, "anchor": "top-right", "x": 12, "y": 12, "width": 140, "scale": 1, "opacity": 0.84 },
+        "chatBox": { "enabled": false },
+        "hotbar": { "enabled": false },
+        "virtualJoystick": { "enabled": true, "anchor": "bottom-left", "x": 22, "y": 22, "size": 128, "opacity": 0.48 },
+        "mobileActionButtons": { "enabled": true, "anchor": "bottom-right", "x": 20, "y": 20, "skillCount": 4, "attackSize": 72 }
+      },
+      "bindings": {
+        "tapGround": "movementIntent",
+        "tapEntity": "selectTarget",
+        "attackButton": "attackSelectedTarget",
+        "skillButtons": "useSkillSlot",
+        "dragRight": "cameraRotate",
+        "pinch": "cameraZoom"
+      }
+    },
+    "mobile-portrait-v1": {
+      "device": "mobile",
+      "orientation": "portrait",
+      "scene": "main-hud",
+      "safeArea": true,
+      "touchTarget": 56,
+      "recommendLandscapeForCombat": true,
+      "components": {
+        "basicInfo": { "enabled": true, "anchor": "top-left", "x": 10, "y": 10, "width": 205, "scale": 1, "opacity": 0.84 },
+        "targetInfo": { "enabled": true, "anchor": "top-center", "x": 0, "y": 82, "width": 210, "scale": 1, "opacity": 0.84 },
+        "miniMap": { "enabled": true, "anchor": "top-right", "x": 10, "y": 10, "width": 105, "scale": 1, "opacity": 0.84 },
+        "chatBox": { "enabled": false },
+        "hotbar": { "enabled": false },
+        "virtualJoystick": { "enabled": true, "anchor": "bottom-left", "x": 18, "y": 18, "size": 105, "opacity": 0.48 },
+        "mobileActionButtons": { "enabled": true, "anchor": "bottom-right", "x": 18, "y": 18, "skillCount": 4, "attackSize": 64 }
+      }
+    }
+  }
+}
