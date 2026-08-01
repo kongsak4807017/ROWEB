@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/asset-catalog.schema.json",
+  "title": "ROWEB Engine-Neutral Asset Catalog Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "asset_id", "asset_type", "source", "dependencies", "targets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "asset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "asset_type": {"enum": ["map", "texture", "model", "sprite", "effect", "audio", "ui", "data", "font"]},
+    "source": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._*-]+$"}
+    },
+    "targets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["robrowser"],
+      "properties": {
+        "robrowser": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["runtime_path"],
+          "properties": {
+            "runtime_path": {"type": "string", "minLength": 1},
+            "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          }
+        },
+        "unity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["addressable_key", "conversion_profile"],
+          "properties": {
+            "addressable_key": {"type": "string", "minLength": 1},
+            "conversion_profile": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}
