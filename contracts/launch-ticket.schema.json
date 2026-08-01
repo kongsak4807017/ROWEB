@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roweb.local/contracts/launch-ticket.schema.json",
+  "title": "ROWEB One-Time Launch Ticket",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ticket_id", "issued_at", "expires_at", "audience", "client_type", "session_correlation_id", "nonce"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "ticket_id": {"type": "string", "format": "uuid"},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "audience": {"const": "roweb-wss-gateway"},
+    "client_type": {"enum": ["robrowser", "unity"]},
+    "session_correlation_id": {"type": "string", "format": "uuid"},
+    "nonce": {"type": "string", "minLength": 32, "maxLength": 128},
+    "compatibility_profile": {"type": "string", "pattern": "^[A-Z0-9_]+$"}
+  }
+}
